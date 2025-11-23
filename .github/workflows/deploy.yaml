@@ -27,6 +27,7 @@ jobs:
           cd ~/toaster/
           git pull origin master
           cp ~/environments/toaster/.env ~/toaster/
-          docker down
+          docker stop
+          docker rm
           docker up --build -d
         EOF
