@@ -15,6 +15,7 @@ jobs:
     - name: Set up SSH
       run: |
         mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
