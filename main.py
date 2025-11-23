@@ -37,9 +37,7 @@ def send_start(message):
 @bot.message_handler()
 def text_commands(message):
     chat_id = message.chat.id
-    print(users[chat_id])
     if message.text == "heat":
-        print("decision was made")
         if len(users[chat_id]) == 0 or len(users[chat_id]) == 1:
             done_time = datetime.now() + timedelta(seconds=random.randint(30, 1_000_000))
             users[chat_id].append(done_time)
