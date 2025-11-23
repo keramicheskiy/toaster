@@ -29,5 +29,6 @@ jobs:
           cp ~/environments/toaster/.env ~/toaster/
           docker stop toaster
           docker rm toaster
-          docker up --build -d
+          docker build -t toaster .
+          docker run --name toaster toaster
         EOF
